@@ -16,7 +16,7 @@ function UserReg() {
       <div className="user-reg-container">
         <div className="user-reg-bg-parent ">
           <div className="user-reg-bg-left">
-            <div className="user-reg-left-container">
+            <div className="user-reg-left-container container">
               <video
                 src={trailer}
                 autoPlay

@@ -21,7 +21,7 @@ function PublicFooter() {
             <li className="mb-2"><Link className="footerList" to="/home">Home</Link></li>
             <li className="mb-2"><Link className="footerList" to="/About">About</Link></li>
             <li className="mb-2"><Link className="footerList" to="/contact">Contact</Link></li>
-            <li ><Link className="footerList" to="/login">Login</Link></li>
+            <li ><Link className="footerList" to="/user-login">Login</Link></li>
           </ul>
         </div>
 
