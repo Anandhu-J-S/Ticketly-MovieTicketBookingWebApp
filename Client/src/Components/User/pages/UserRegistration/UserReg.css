@@ -1,0 +1,79 @@
+
+ .user-reg-bg-parent{
+    display: flex;
+     height: 100vh;
+  width: 100%;
+  position: relative;
+ }
+.user-reg-bg-left {
+    background: #E3E3E3;
+flex:7;
+
+}
+.user-reg-left-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.user-reg-left-container-text{
+    font-family: Lato;
+  font-size: 25px;
+  font-weight: 500;
+}
+.user-reg-bg-video {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Or adjust based on your layout */
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.user-reg-bg-right {
+    background: #A8A8B7;
+  flex: 3;
+
+}
+
+ .user-reg-card-container {
+  position: absolute;
+  right: 45%;
+  top: 5%;
+  border-radius: 30px !important;
+  background: white;
+  padding: 40px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  min-width: 450px;
+  max-height: 770px;
+  z-index: 10;
+}
+.user-reg-profile-preview{
+    height: 100px;
+}
+
+
+.user-reg-card-title,
+.user-reg-card-body {
+  font-size: 20px;
+  font-family: Lato;
+  text-align: center;
+  /* padding: 0px; */
+}
+
+.user-reg-form-size {
+    height: 70px;
+    width: 100%;
+    margin-bottom: 5px;
+    border: none !important;
+    border-bottom: 2px solid #ccc !important;
+    border-radius: 0 !important;
+}
+
+.user-reg-form-size:focus {
+    border-bottom: 2px solid #007bff;
+    outline: none;
+    box-shadow: none;
+}

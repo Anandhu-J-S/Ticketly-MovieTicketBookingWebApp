@@ -1,0 +1,125 @@
+
+Movie Booking Application - Full Stack Web Project
+
+Technology Stack:
+- Frontend: React.js
+- Backend: Node.js with Express.js
+- Database: MongoDB
+
+Project Overview:
+This project is a full-fledged movie ticket booking system that facilitates movie management and ticket booking across different roles: Admin, User, and Theater. The Admin can manage users, theaters, and movies. The Theater module allows theater owners to add and manage their own movies and show timings. Users can browse movies, view showtimes, book tickets, and manage their bookings.
+
+Modules:
+1. Admin Module:
+   - Manage users (ban users)
+   - Manage theaters (approve, deactivate)
+   - Manage all movies and global settings
+
+2. Theater Module:
+   - Register/Login as Theater Owner
+   - Add/manage screens
+   - Add/manage movies and show timings
+
+3. User Module:
+   - User Registration/Login
+   - Browse movies and theaters
+   - Book tickets and make payments
+   - View booking history
+
+Main Features:
+- Role-based authentication and authorization
+- Real-time seat selection and booking
+- Payment gateway integration (optional)
+- Responsive UI with React.js
+
+---
+
+WBS
+
+WBS Table – High Level
+| WBS Code | Phase                  | Description                                  |
+| -------- | ---------------------- | -------------------------------------------- |
+| 1        | Planning & Setup       | Initial setup, repo creation, tech decisions |
+| 2        | Frontend Development   | React-based user interface                   |
+| 3        | Backend Development    | Express.js server, routes, controllers       |
+| 4        | Database Design        | MongoDB schema and integration               |
+| 5        | Feature Implementation | Core modules: Admin, User, Theater           |
+| 6        | Integration & Testing  | API + UI testing                             |
+| 7        | Deployment & Docs      | Host app, create documentation               |
+
+
+ WBS Table – Detailed Breakdown
+| WBS Code | Task Description                           | Assigned To    | Tech Stack     | Deliverables           |
+| -------- | ------------------------------------------ | -------------- | -------------- | ---------------------- |
+| 1.1      | Project structure setup (frontend/backend) | Full-stack Dev | React, Node.js | Base project folders   |
+| 1.2      | Initialize Git & Version Control           | All Devs       | GitHub         | Repo setup             |
+| 1.3      | Environment setup (MongoDB, .env)          | Backend Dev    | MongoDB        | Local + cloud DB setup |
+
+
+
+ Frontend Development (React.js)
+| WBS Code | Task Description                 | Assigned To  | Tech Stack         | Deliverables       |
+| -------- | -------------------------------- | ------------ | ------------------ | ------------------ |
+| 2.1      | Create landing & login/signup UI | Frontend Dev | React.js           | Auth Pages         |
+| 2.2      | Dashboard for Admin/User/Theater | Frontend Dev | React + Router     | Role-based views   |
+| 2.3      | Movie browsing & filtering UI    | Frontend Dev | React              | Movie list UI      |
+| 2.4      | Seat selection UI with state     | Frontend Dev | React, Context API | Real-time seat map |
+| 2.5      | Booking & payment flow UI        | Frontend Dev | React, Forms       | Booking form       |
+
+
+ Backend Development (Node.js + Express.js)
+| WBS Code | Task Description                       | Assigned To | Tech Stack       | Deliverables   |
+| -------- | -------------------------------------- | ----------- | ---------------- | -------------- |
+| 3.1      | Set up Express server and routing      | Backend Dev | Express.js       | Basic API      |
+| 3.2      | Auth (JWT) for Users, Theaters, Admins | Backend Dev | JWT, bcrypt      | Auth APIs      |
+| 3.3      | Admin APIs (user/theater/movie mgmt)   | Backend Dev | Express, MongoDB | Admin routes   |
+| 3.4      | Theater APIs (movies, shows, screens)  | Backend Dev | Express          | CRUD APIs      |
+| 3.5      | User APIs (browse, book, pay, cancel)  | Backend Dev | Express          | Booking system |
+
+
+mongodb schema design 
+| WBS Code | Task Description                   | Assigned To | Tech Stack | Deliverables                     |
+| -------- | ---------------------------------- | ----------- | ---------- | -------------------------------- |
+| 4.1      | User schema (roles, bookings)      | Backend Dev | Mongoose   | `User` model                     |
+| 4.2      | Movie & Show schema                | Backend Dev | Mongoose   | `Movie`, `Show`, `Screen` models |
+| 4.3      | Theater schema                     | Backend Dev | Mongoose   | `Theater` model                  |
+| 4.4      | Booking schema with seats & timing | Backend Dev | Mongoose   | `Booking` model                  |
+
+
+admin module
+| WBS Code | Task                        | Deliverable       |
+| -------- | --------------------------- | ----------------- |
+| 5.1.1    | Approve/deactivate theaters | Admin routes & UI |
+| 5.1.2    | Ban/activate users          | Admin dashboard   |
+| 5.1.3    | Global movie settings       | Config management |
+
+
+theater
+| WBS Code | Task                     | Deliverable               |
+| -------- | ------------------------ | ------------------------- |
+| 5.2.1    | Register/login theater   | Auth + Dashboard          |
+| 5.2.2    | Manage screens/shows     | CRUD operations           |
+| 5.2.3    | Add movies with schedule | Linked movies+screen data |
+
+
+
+user
+| WBS Code | Task                         | Deliverable           |
+| -------- | ---------------------------- | --------------------- |
+| 5.3.1    | Register/login users         | Auth pages            |
+| 5.3.2    | Browse movies & book tickets | Seat UI + booking API |
+| 5.3.3    | View/cancel bookings         | Booking history UI    |
+
+
+backend folder str 
+-------------------
+/client (React app)
+/server
+  /controllers
+  /models
+  /routes
+  /middleware
+  /config
+  server.js
+.env
+

@@ -1,0 +1,35 @@
+.custom-navbar {
+  background: linear-gradient(to bottom right, #111827, #312E81);
+  height: 70px;
+}
+
+.navbar-brand {
+  color: #FFFFFF !important;
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-family: 'Courier New', monospace;
+}
+
+.nav-link {
+  color: #FFFFFF !important;
+  font-weight: 500;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #C7D2FE !important;
+}
+
+.btn.custom-login-btn {
+  background-color:  #312E81;
+  color: white;
+  font-weight: 500;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn.custom-login-btn:hover {
+  background-color: #F87171	;
+    color: white;
+}

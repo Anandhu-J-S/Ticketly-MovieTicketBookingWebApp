@@ -1,0 +1,33 @@
+.not-found-body {
+    background: linear-gradient(to bottom right, #111827, #312E81);
+}
+
+.card.not-found-card {
+    background: rgba(255, 255, 255, 0.05)
+}
+
+.not-found-card-text-head {
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 3rem;
+    font-family: 'Courier New', monospace;
+    font-style: oblique;
+}
+
+.not-found-card-text-para {
+    color: #C7D2FE;
+    font-style: oblique;
+    font-size: 1.5rem;
+}
+.not-found-card-text-para-two {
+    color:#C7D2FE;
+    font-style: oblique;
+    font-size: 1rem;
+}
+.not-found-sub-cards{
+    min-height: 300px;
+}
+.not-found-logo{
+    height: 150px;
+    width: 200px;
+}

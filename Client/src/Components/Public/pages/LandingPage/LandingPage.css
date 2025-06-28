@@ -1,0 +1,67 @@
+.landing-page-body{
+    
+      background: linear-gradient(to bottom right, #111827, #312E81);
+}
+.landing-page-carousel-custom {
+    position: relative;
+    top: 30px;
+}
+.lp-now-showing-head{
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 3rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 50px;
+}
+
+
+.landing-page-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  /* background: #111; */
+  padding: 1rem 0;
+}
+
+
+.landing-page-carousel-track {
+  display: flex;
+  gap: 1rem;
+  animation: landing-page-scroll 20s linear infinite;
+  width: max-content;
+}
+
+.landing-page-movie-card {
+  min-width: 150px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+
+.landing-page-movie-card:hover {
+  transform: scale(1.05);
+}
+
+.landing-page-movie-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes landing-page-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.lp-recently-added-movies-card{
+  width: 300px;
+ 
+}
