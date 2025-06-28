@@ -8,7 +8,7 @@ function UserRoutes() {
     
     <Route
       path="/user-login"
-      element={<UserLogin />}
+      element={<><UserLogin /></>}
     />
     <Route path='/user-register' element={<UserReg/>}></Route>
 </>

@@ -1,43 +1,56 @@
-
- .user-reg-bg-parent{
-    display: flex;
-     height: 100vh;
+.user-reg-bg-parent {
+  display: flex;
+  height: 100vh;
   width: 100%;
   position: relative;
- }
+}
+
 .user-reg-bg-left {
-    background: #E3E3E3;
-flex:7;
+  background: #E3E3E3;
+  flex: 7;
 
 }
-.user-reg-left-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+.user-reg-left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* width: 100%; */
+
 }
-.user-reg-left-container-text{
-    font-family: Lato;
+
+.user-reg-left-container-text {
+  font-family: Lato;
   font-size: 25px;
   font-weight: 500;
 }
+
 .user-reg-bg-video {
-  width: 100%;
+  width: 50%;
   height: auto;
-  max-height: 300px; /* Or adjust based on your layout */
+  max-height: 250px;
   border-radius: 20px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0.5;
+  position: absolute;
+
+}
+
+.user-reg-bg-video:hover {
+  position: absolute;
+  z-index: 15;
+  opacity: 1;
 }
 
 
 .user-reg-bg-right {
-    background: #A8A8B7;
+  background: #A8A8B7;
   flex: 3;
-
 }
 
- .user-reg-card-container {
+.user-reg-card-container {
   position: absolute;
   right: 45%;
   top: 5%;
@@ -50,8 +63,17 @@ flex:7;
   max-height: 770px;
   z-index: 10;
 }
-.user-reg-profile-preview{
-    height: 100px;
+
+/* 
+.user-reg-card-container:hover {
+ z-index: 10;
+} */
+
+
+
+
+.user-reg-profile-preview {
+  height: 100px;
 }
 
 
@@ -64,16 +86,16 @@ flex:7;
 }
 
 .user-reg-form-size {
-    height: 70px;
-    width: 100%;
-    margin-bottom: 5px;
-    border: none !important;
-    border-bottom: 2px solid #ccc !important;
-    border-radius: 0 !important;
+  height: 70px;
+  width: 100%;
+  margin-bottom: 5px;
+  border: none !important;
+  border-bottom: 2px solid #ccc !important;
+  border-radius: 0 !important;
 }
 
 .user-reg-form-size:focus {
-    border-bottom: 2px solid #007bff;
-    outline: none;
-    box-shadow: none;
+  border-bottom: 2px solid #007bff;
+  outline: none;
+  box-shadow: none;
 }

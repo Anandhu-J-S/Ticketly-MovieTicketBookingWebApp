@@ -23,7 +23,7 @@ function PublicNavbar() {
                     </ul>
 
                 </div>
-                <Link to="/login">
+                <Link to="/user-login">
                     <button className='btn custom-login-btn'>Login</button>
                 </Link>
             </div>
