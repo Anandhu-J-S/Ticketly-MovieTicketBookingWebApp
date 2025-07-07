@@ -1,0 +1,36 @@
+.terms-body {
+    background: linear-gradient(to bottom right, #111827, #312E81);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.terms-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #c7d2fe;
+    backdrop-filter: blur(8px);
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.terms-title {
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.terms-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    color: #c7d2fe;
+    line-height: 1.8;
+}
+
+.terms-list li {
+    margin-bottom: 12px;
+}
+
+.terms-footer {
+    color: #e0e7ff;
+}

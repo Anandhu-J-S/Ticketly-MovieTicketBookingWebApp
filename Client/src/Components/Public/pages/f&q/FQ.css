@@ -1,0 +1,41 @@
+.faq-body {
+  background: linear-gradient(to bottom right, #111827, #312E81);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.faq-card {
+  background: rgba(255, 255, 255, 0.05)!important;
+  color: #c7d2fe;
+  backdrop-filter: blur(10px);
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.faq-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Lato', sans-serif;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.faq-answer {
+  color: #c7d2fe;
+  font-size: 1rem;
+  padding-left: 10px;
+  line-height: 1.6;
+}
+
+.faq-footer {
+  color: #e0e7ff;
+}

@@ -1,0 +1,37 @@
+.contact-us-body {
+  background: linear-gradient(to bottom right, #111827, #312E81);
+}
+
+.card.contact-us-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+}
+
+.contact-us-logo {
+  width: 150px;
+  height: auto;
+}
+
+.contact-us-title {
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 2rem;
+  font-style: oblique;
+  font-family: 'Courier New', monospace;
+}
+
+.contact-us-description {
+  color: #C7D2FE;
+  font-style: oblique;
+  font-size: 1rem;
+}
+
+.contact-us-info p {
+  color: #C7D2FE;
+  font-style: oblique;
+  margin-bottom: 0.5rem;
+}
+
+.contact-us-footer {
+  color: #C7D2FE;
+}

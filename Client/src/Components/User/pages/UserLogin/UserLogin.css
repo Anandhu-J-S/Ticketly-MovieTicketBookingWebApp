@@ -59,7 +59,7 @@
   top: 25%;
   border-radius: 30px !important;
   background: white;
-  padding: 40px;
+  padding: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
   width: 90%;
   min-width: 450px;
@@ -101,4 +101,35 @@
   border-bottom: 2px solid #007bff;
   outline: none;
   box-shadow: none;
+}
+.pass-icon-parent{
+  position: relative;
+}
+.pass-icon-login{
+  position: absolute;
+  top: 20px;
+}
+
+@media(max-width:768px) {
+  .user-reg-bg-left {
+    display: none;
+  }
+
+  .user-reg-bg-right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .user-login-card-container {
+      position: absolute;
+   left: 0%;
+   top: 20;
+   max-height: 500px;
+  }
+
+}
+
+input.input-err,
+select.input-err{
+  border-color: #fc8181;
 }

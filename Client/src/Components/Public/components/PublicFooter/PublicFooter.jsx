@@ -30,7 +30,7 @@ function PublicFooter() {
           <p className="footer_terms_and_polices">Terms & Policies</p>
           <ul>
             <li className="mb-2"  ><Link className="footerList" to="/terms-of-conditions">Terms of Conditions</Link></li>
-            <li className="mb-2"><Link className="footerList" to="/f&q">f&q</Link></li>
+            <li className="mb-2"><Link className="footerList" to="/fq">f&q</Link></li>
             <li className="mb-2"><Link className="footerList" to="/privacy-policy">Privacy Policy</Link></li>
           </ul>
         </div>

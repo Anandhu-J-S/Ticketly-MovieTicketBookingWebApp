@@ -1,6 +1,8 @@
 .custom-navbar {
-  background: linear-gradient(to bottom right, #111827, #312E81);
+  /* background: linear-gradient(to bottom right, #111827, #312E81); */
   height: 70px;
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.253); */
+  position: absolute;
 }
 
 .navbar-brand {
@@ -33,3 +35,6 @@
   background-color: #F87171	;
     color: white;
 }
+
+
+
