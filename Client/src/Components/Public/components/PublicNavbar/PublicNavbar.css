@@ -1,8 +1,6 @@
+
 .custom-navbar {
-  /* background: linear-gradient(to bottom right, #111827, #312E81); */
   height: 70px;
-  /* border-bottom: 2px solid rgba(255, 255, 255, 0.253); */
-  position: absolute;
 }
 
 .navbar-brand {
@@ -24,7 +22,7 @@
 }
 
 .btn.custom-login-btn {
-  background-color:  #312E81;
+  background-color: #312E81;
   color: white;
   font-weight: 500;
   border: none;
@@ -32,9 +30,6 @@
 }
 
 .btn.custom-login-btn:hover {
-  background-color: #F87171	;
-    color: white;
+  background-color: #F87171;
+  color: white;
 }
-
-
-
