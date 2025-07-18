@@ -1,3 +1,7 @@
+
+
+import{useContext} from 'react'
+import { ThemeContext } from '../../../../Context/ThemeContext'
 import "../LandingPage/LandingPage.css"
 import lp1 from "../../../../assets/images/LandingPageImgs/lp-1.avif"
 import lp2 from "../../../../assets/images/LandingPageImgs/lp.2.avif"
@@ -20,8 +24,14 @@ function LandingPage() {
     { id: 5, title: 'The Dark Knight', image: `${film5}` },
     { id: 6, title: 'Memento', image: `${film6}` },
   ];
+
+
+
+  // const theme = localStorage.getItem("Theme") === "true";
+    const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="landing-page-body">
+    <div className={`landing-page-body ${theme ? "bg-color-darkmode": "bg-color-lightmode"}`}>
       {/* Carousel  */}
       <div className="container-fluid">
         <div id="demo" className="carousel slide landing-page-carousel-custom" data-bs-ride="carousel">
@@ -59,6 +69,7 @@ function LandingPage() {
 
       {/* Now Showing */}
       <p className="lp-now-showing-head container">Now Showing</p>
+      
 
 
       {/* movie Carousel  */}

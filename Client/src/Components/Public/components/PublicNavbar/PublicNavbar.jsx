@@ -1,14 +1,16 @@
 import "../PublicNavbar/PublicNavbar.css"
 import { Link } from 'react-router-dom'
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import Switch from "react-switch";
-
+import { useContext } from "react";
+import { ThemeContext } from "../../../../Context/ThemeContext";
 function PublicNavbar() {
-    const [theme, setTheme] = useState(() => {
-        // Get saved theme on first render
-        const saved = localStorage.getItem("Theme");
-         return saved !== null ? saved === "true" : true;  
-    });
+    // const [theme, setTheme] = useState(() => {
+    //     // Get saved theme on first render
+    //     const saved = localStorage.getItem("Theme");
+    //      return saved !== null ? saved === "true" : true;  
+    // });
+     const { theme, setTheme } = useContext(ThemeContext);
 
     useEffect(() => {
         localStorage.setItem("Theme", theme)
