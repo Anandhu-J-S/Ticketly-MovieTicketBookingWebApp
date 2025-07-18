@@ -1,7 +1,7 @@
 /* cloned from register page */
 
 
-.user-reg-bg-parent {
+/* .user-reg-bg-parent {
   display: flex;
   height: 100vh;
   width: 100%;
@@ -19,7 +19,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* width: 100%; */
 
 }
 
@@ -67,12 +66,6 @@
   z-index: 10;
 }
 
-/* 
-.user-reg-card-container:hover {
- z-index: 10;
-} */
-
-
 
 
 .user-reg-profile-preview {
@@ -85,7 +78,6 @@
   font-size: 20px;
   font-family: Lato;
   text-align: center;
-  /* padding: 0px; */
 }
 
 .user-reg-form-size {
@@ -132,4 +124,4 @@
 input.input-err,
 select.input-err{
   border-color: #fc8181;
-}
+} */

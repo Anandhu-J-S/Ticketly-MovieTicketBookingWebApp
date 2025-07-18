@@ -1,4 +1,4 @@
-.user-reg-bg-parent {
+/* .user-reg-bg-parent {
   display: flex;
   height: 100vh;
   width: 100%;
@@ -6,8 +6,7 @@
 }
 
 .user-reg-bg-left {
-  /* background: #E3E3E3; */
-  /* background: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, #1d1a64 100%); */
+  
   background: linear-gradient(to right, #0f172a, #312e81);
 
   flex: 7;
@@ -19,8 +18,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* width: 100%; */
-
 }
 
 .user-reg-left-container-text {
@@ -38,7 +35,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   opacity: 0.5;
   position: absolute;
-
 }
 
 .user-reg-bg-video:hover {
@@ -49,12 +45,7 @@
 
 
 .user-reg-bg-right {
-  /* background: #A8A8B7; */
-  /* background: linear-gradient(to bottom right, #1F2937, #4F46E5); */
-  /* background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #1d1a64 100%); */
-
   background: linear-gradient(to left, #1e1b4b, #4338ca);
-
   flex: 3;
 }
 
@@ -72,13 +63,6 @@
   z-index: 10;
 }
 
-/* 
-.user-reg-card-container:hover {
- z-index: 10;
-} */
-
-
-
 
 .user-reg-profile-preview {
   height: 100px;
@@ -90,7 +74,6 @@
   font-size: 20px;
   font-family: Lato;
   text-align: center;
-  /* padding: 0px; */
 }
 
 .user-reg-form-size {
@@ -122,4 +105,4 @@
       position: absolute;
    left: 0%;
   }
-}
+} */
