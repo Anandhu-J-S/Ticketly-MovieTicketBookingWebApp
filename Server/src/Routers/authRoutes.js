@@ -1,6 +1,8 @@
 import { Router } from "express";
-import { login, register } from "../Controllers/authController/authController.js";
+import { userLogin, userRegister } from "../Controllers/authController/userAuthController.js";
+import multer from 'multer'
+const upload = multer()
 export const router = Router()
 
-router.post("/register",register)
-router.post("/login",login)
+router.post("/user/register",upload.none(),userRegister)
+router.post("/user/login",userLogin)
