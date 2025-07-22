@@ -101,7 +101,9 @@ theater
 | 5.2.2    | Manage screens/shows     | CRUD operations           |
 | 5.2.3    | Add movies with schedule | Linked movies+screen data |
 
-
+-> add advertisements for promotional movies
+-> data analyzing page on movie sales and target
+-> no of users bought the ticket
 
 user
 | WBS Code | Task                         | Deliverable           |
