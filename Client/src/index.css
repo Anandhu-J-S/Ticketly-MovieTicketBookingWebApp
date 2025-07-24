@@ -28,7 +28,7 @@
 
 .bg-color-lightmode {
     /* background: #ffff !important; */
-    background: var(--secondary-gradient);
+    background: var(--primary-gradient);
 }
 
 .text-color-darkmode {

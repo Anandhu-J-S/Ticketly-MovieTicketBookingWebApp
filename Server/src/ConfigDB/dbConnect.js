@@ -12,3 +12,4 @@ export const dbConnect = () => {
         console.log("DB connection failed",err)
     }
 }
+
