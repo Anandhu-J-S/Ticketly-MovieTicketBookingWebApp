@@ -1,4 +1,4 @@
-// import "../UserRegistration/UserReg.css";
+// 
 // import { Link } from "react-router-dom";
 // import profilepic from "../../../../assets/images/def_profile.webp";
 // import trailer from "../../../../assets/Videos/trailer.mp4";
@@ -192,13 +192,28 @@
 
 // export default UserReg;
 
+import "../UserRegistration/UserReg.css";
+import { useContext } from 'react'
+import { ThemeContext } from '../../../../Context/ThemeContext'
 
-import React from 'react'
 
 function UserReg() {
+
+  const { theme } = useContext(ThemeContext);
   return (
-    <div>
-       get a better reg page
+    <div className={`user-reg-bg ${theme ? "bg-color-darkmode" : "bg-color-lightmode"}`}>
+
+      {/* <p className={`${theme ? "text-color-darkmode" : "text-color-lightmode"}`}>bfgbf</p> */}
+
+
+      <div className="card">
+        <div className="card-body">
+          <div className="card-head">
+            <p className={`${theme ? "text-color-darkmode" : "text-color-lightmode"}`}>Register</p>
+          </div>
+          <div className="card-footer"></div>
+        </div>
+      </div>
     </div>
   )
 }

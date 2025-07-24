@@ -9,16 +9,21 @@ dotenv.config()
 
 export const userRegister = async (req, res) => {
     try {
+        console.log("Uploaded file:", req.file);
         const { username, email, contact, password, role } = req.body;
+        const profilePic = req.file ? req.file.path : null;
+
         //hash the password 
         const hashedPassword = await (bcrypt.hash(password, 10))
         // create a new user
         const newUser = new createUserModel({
+
             username,
             email,
             contact,
             password: hashedPassword,
-            role
+            role,
+            profilePic
         })
         await newUser.save();
         res.status(201)
@@ -28,7 +33,7 @@ export const userRegister = async (req, res) => {
     catch (err) {
         res.status(500)
             .json({ message: `Registration failed !! Contact Admin!`, error: err.message })
-              console.log(`Registration failed !! Contact Admin!`)
+        console.log(`Registration failed !! Contact Admin!`)
     }
 }
 

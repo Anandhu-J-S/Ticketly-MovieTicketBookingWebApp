@@ -1,8 +1,9 @@
 
+
 :root {
   --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  --dark-gradient: linear-gradient(135deg, #0c0c0cc0 0%, #1a1a1a 100%);
   --accent-color: #ff6b6b;
   --text-light: #f8f9fa;
   --glass-bg: rgba(255, 255, 255, 0.1);
