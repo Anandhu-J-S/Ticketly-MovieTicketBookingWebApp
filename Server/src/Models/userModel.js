@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
-    profilePic:{type:String},
+    profilePic:{type:String, required:true},
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     contact: { type: Number, required: true, unique: true },
@@ -11,4 +11,4 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 })
 
-export const createUserModel = mongoose.model("user", userSchema)
+export const createUserModel = mongoose.model("user", userSchema)  

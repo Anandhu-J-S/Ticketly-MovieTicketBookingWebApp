@@ -121,11 +121,11 @@ function UserLogin() {
   function onSubmit(data) {
     console.log(data)
   }
+    const { theme } = useContext(ThemeContext);
 
-  // heyy
   return (
     <div>
-       <div className='user-login-bg'>
+       <div className={`user-login-bg ${theme ? "bg-color-darkmode": "bg-color-lightmode"}`}>
           <div className="user-login-form-container">
             <div className="card user-login-form-card">
               <div className="card-head text-center"><p>Login</p></div>

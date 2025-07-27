@@ -17,7 +17,6 @@ export const userRegister = async (req, res) => {
         const hashedPassword = await (bcrypt.hash(password, 10))
         // create a new user
         const newUser = new createUserModel({
-
             username,
             email,
             contact,
@@ -36,6 +35,7 @@ export const userRegister = async (req, res) => {
         console.log(`Registration failed !! Contact Admin!`)
     }
 }
+
 
 export const userLogin = async (req, res) => {
     const { username, password } = req.body;
