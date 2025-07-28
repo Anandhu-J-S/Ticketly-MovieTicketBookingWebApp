@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { userLogin, userRegister } from "../Controllers/authController/userAuthController.js";
+import { deleteUser, updatedUser, userLogin, userRegister } from "../Controllers/authController/userAuthController.js";
 import { upload } from "../middlewares/upload.js";
-import { theaterLogin, theaterRegister } from "../Controllers/authController/theaterAuthController.js";
+import { deleteTheater, theaterLogin, theaterRegister, theaterUpdate } from "../Controllers/authController/theaterAuthController.js";
 import { adminDelete, adminLogin, adminRegister, adminUpdate } from "../Controllers/authController/adminAuthController.js";
 
 export const router = Router()
@@ -9,12 +9,16 @@ export const router = Router()
 
 //user
 router.post("/user/register", upload.single('profilePic'), userRegister)
-router.post("/user/login", userLogin)
+router.post("/user/login",upload.none(), userLogin)
+router.put("/user/update/:id",upload.single('profilePic'),updatedUser)
+router.delete("/user/delete/:id",deleteUser)
 
 
 //theater
 router.post("/theater/register", upload.single('image'), theaterRegister)
 router.post("/theater/login", upload.none(), theaterLogin)
+router.put("/theater/update/:id",upload.single('image'),theaterUpdate)
+router.delete("/theater/delete/:id",upload.none(),deleteTheater)
 
 
 //admin

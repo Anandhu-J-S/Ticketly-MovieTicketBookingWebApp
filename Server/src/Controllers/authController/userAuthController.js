@@ -67,3 +67,67 @@ export const userLogin = async (req, res) => {
     res.status(200)
         .json({ token })
 }
+
+//update user profile
+
+export const updatedUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+
+        const { username, email, contact, password, role } = req.body;
+
+        const updates = {};
+
+        if (username) updates.username = username;
+        if (email) updates.email = email;
+        if (contact) updates.contact = contact;
+        if (password) {
+            const hashedPassword = await bcrypt.hash(password, 10)
+
+            updates.password = hashedPassword;
+        }
+        if (req.file) {
+            updates.profilePic = req.file.path;
+        }
+        if (role) updates.role = role;
+
+        const updatedUser = await createUserModel.findByIdAndUpdate(
+            userId,
+            { $set: updates },
+            { new: true }
+        )
+
+        if (!updatedUser) {
+            return res.status(404)
+                .json({ message: `User NOT found` })
+        }
+        res.status(200)
+            .json({ message: `User updated successfully` })
+
+
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+export const deleteUser = async (req, res) => {
+    try {
+        const userId = req.params.id;
+
+        const deletedUser = await createUserModel.findByIdAndDelete(userId)
+
+        if (!deletedUser) {
+            return res.status(404)
+                .json({ message: `user NOT found!` })
+        }
+
+        res.status(200).json({ message: `user deleted successfully` })
+
+    }
+    catch (err) {
+        console.log(err);
+        res.status(500)
+            .json({ message: `Failed to delete user!` })
+    }
+}

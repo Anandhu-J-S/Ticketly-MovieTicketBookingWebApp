@@ -71,6 +71,8 @@ export const adminLogin = async (req, res) => {
     res.status(200).json({ token })
 }
 
+//update profile admin
+
 export const adminUpdate = async (req, res) => {
     try {
         const adminId = req.params.id;
@@ -100,7 +102,7 @@ export const adminUpdate = async (req, res) => {
         );
 
         if (!updatedAdmin) {
-            return res.status(404).json({ message: "Admin not found" });
+            return res.status(404).json({ message: "Admin not found!" });
         }
 
         res.status(200).json({
@@ -114,6 +116,7 @@ export const adminUpdate = async (req, res) => {
     }
 };
 
+//delete profile admin
 export const adminDelete = async (req, res) => {
     try {
         const adminId = req.params.id;
