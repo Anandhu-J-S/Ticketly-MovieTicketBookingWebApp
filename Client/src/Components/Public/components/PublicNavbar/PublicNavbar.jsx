@@ -38,7 +38,8 @@ function PublicNavbar() {
     };
 
     return (
-        <nav className={`navbar navbar-expand-sm custom-navbar ${bgClass} `}>
+        <div>
+            <nav className={`navbar navbar-expand-sm custom-navbar ${bgClass} `}>
             <div className="container-fluid align-items-center">
                 <Link className={`navbar-brand ${textClass}`} to="/"><p className={`${textClass} mt-3`}>🎟️ Ticketly</p></Link>
 
@@ -87,7 +88,11 @@ function PublicNavbar() {
 
 
             </div>
+           
         </nav>
+
+        </div>
+        
     )
 }
 
