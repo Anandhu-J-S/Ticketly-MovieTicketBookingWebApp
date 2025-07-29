@@ -11,7 +11,8 @@ export const userRegister = async (req, res) => {
     try {
         console.log("Uploaded file:", req.file);
         const { username, email, contact, password, role } = req.body;
-        const profilePic = req.file ? req.file.path : null;
+     const profilePic = req.file ? req.file.filename : null;
+
 
         //hash the password 
         const hashedPassword = await (bcrypt.hash(password, 10))
