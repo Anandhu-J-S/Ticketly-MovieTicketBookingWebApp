@@ -9,11 +9,11 @@ function UserRoutes() {
     <>
       <Route
         path="/user-login"
-        element={<> <PublicNavbar /> <UserLogin /> </>}
+        element={<> <PublicNavbar /> <UserLogin /><PublicFooter/></>}
       />
       <Route
         path='/user-register'
-        element={<><PublicNavbar /><UserReg /> </>}>
+        element={<><PublicNavbar /><UserReg /><PublicFooter/> </>}>
       </Route>
     </>
   );

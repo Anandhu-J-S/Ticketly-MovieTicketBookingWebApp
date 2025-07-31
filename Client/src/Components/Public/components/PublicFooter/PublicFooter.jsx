@@ -1,9 +1,12 @@
 import "../PublicFooter/PublicFooter.css";
 import { Link } from "react-router-dom";
+import { useContext } from 'react'
+import { ThemeContext } from '../../../../Context/ThemeContext'
 
 function PublicFooter() {
+    const { theme } = useContext(ThemeContext)
   return (
-    <div className="footerBG">
+    <div className={`footerBG ${theme ? "bg-dark" : "bg-light"}`}>
       <div className="footerComponents">
         {/* Brand Section */}
         <div className="footer_sec_one">

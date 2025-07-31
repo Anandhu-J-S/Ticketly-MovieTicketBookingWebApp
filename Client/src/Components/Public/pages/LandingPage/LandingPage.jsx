@@ -1,6 +1,7 @@
 
 
-import{useContext} from 'react'
+import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { ThemeContext } from '../../../../Context/ThemeContext'
 import "../LandingPage/LandingPage.css"
 import lp1 from "../../../../assets/images/LandingPageImgs/lp-1.avif"
@@ -28,10 +29,10 @@ function LandingPage() {
 
 
 
-    const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`landing-page-body ${theme ? "bg-color-darkmode": "bg-color-lightmode"}`}>
+    <div className={`landing-page-body ${theme ? "bg-color-darkmode" : "bg-color-lightmode"}`}>
       {/* Carousel  */}
       <div className="container-fluid">
         <div id="demo" className="carousel slide landing-page-carousel-custom" data-bs-ride="carousel">
@@ -69,7 +70,7 @@ function LandingPage() {
 
       {/* Now Showing */}
       <p className="lp-now-showing-head container">Now Showing</p>
-      
+
 
 
       {/* movie Carousel  */}
