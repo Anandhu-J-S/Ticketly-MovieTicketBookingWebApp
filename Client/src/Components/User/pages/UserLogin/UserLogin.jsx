@@ -19,10 +19,10 @@ function UserLogin() {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(`${Base_URl}user/login`, data); // Sending plain JSON, not FormData
-      
+
 
       const { token, message } = response.data;
-console.log("token",response.data.token)
+      console.log("token", response.data.token)
       toast.success(message || 'Login successful!');
 
       // Optionally store token in localStorage for later use

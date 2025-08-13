@@ -125,3 +125,103 @@ backend folder str
   server.js
 .env
 
+
+
+
+
+
+TODO
+
+1. ✅ User Functionality (Front-End & Back-End)
+👀 View Movies:
+Users should be able to browse all movies.
+
+Add filters: genre, language, rating, search by name.
+
+❤️ Wishlist or Watchlist:
+Allow users to add/remove movies to a personal list.
+
+⭐ Movie Rating & Reviews:
+Users can leave a rating (1–10) and a text review.
+
+Calculate average ratings in the movie model.
+
+🎟️ Book Tickets (if your app is cinema-based):
+Let users choose movie, time slot, number of tickets.
+
+Save booking info in a Bookings model.
+
+2. ✅ Theater Functionality
+🕒 Showtimes Management:
+Let theater admins add showtimes for their movies.
+
+Model: Showtime with fields like movieId, theaterId, date, time, seat availability.
+
+📍 Theater Profile Management:
+Theater admins should be able to update their profile, location, etc.
+
+3. ✅ Admin Panel
+🧑‍⚖️ Admin Dashboard:
+View all registered users, theaters, and movies.
+
+Approve or reject theaters (if needed).
+
+Delete any offensive content (movies, reviews).
+
+4. ✅ Bookings & Transactions
+💳 Booking Model:
+js
+Copy
+Edit
+{
+  userId,
+  theaterId,
+  movieId,
+  showtimeId,
+  seats: [A1, A2],
+  price,
+  status: "confirmed" | "cancelled",
+  createdAt
+}
+(Optional) Payment Gateway:
+Integrate Razorpay, Stripe, or a fake payment for demo.
+
+5. ✅ Notifications / Emails (Optional)
+Send confirmation email on booking.
+
+Notify users about upcoming movies or showtimes.
+
+6. ✅ Dashboard UI for Each Role
+Admin: stats, user/theater management
+
+Theater: manage movies, showtimes, see bookings
+
+User: view bookings, manage account, browse/watchlist
+
+7. ✅ Security Enhancements
+Use JWT Auth middleware to protect routes.
+
+Store hashed passwords (bcrypt).
+
+Use role-based access control on routes.
+
+8. ✅ Search & Filtering on Frontend
+By movie name, genre, language, rating
+
+Date-wise showtimes
+
+Paginated movie list
+
+9. ✅ Deployment
+Host backend on Render, Railway, or Heroku
+
+Host frontend on Vercel or Netlify
+
+Connect to MongoDB Atlas (if not done already)
+
+🧠 Bonus Ideas
+Analytics for admin (most watched movies, active users)
+
+Dark mode / light mode toggle
+
+Real-time seat booking updates using Socket.io (advanced)

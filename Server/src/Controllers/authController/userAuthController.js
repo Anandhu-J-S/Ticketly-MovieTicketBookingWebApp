@@ -32,7 +32,7 @@ export const userRegister = async (req, res) => {
     catch (err) {
         res.status(500)
             .json({ message: `Registration failed !! Contact Admin!`, error: err.message })
-        console.log(`Registration failed !! Contact Admin!`)
+        console.log(`Registration failed !! Contact Admin!`,err.message)
     }
 }
 
@@ -46,6 +46,8 @@ export const userLogin = async (req, res) => {
     if (!loginUser) {
         return res.status(404)
             .json({ message: `${username} does not exist!` })
+    }else{
+        console.log(`Welcome ${username}`)
     }
     //if matched
     const isMatch = await bcrypt.compare(password, loginUser.password)
