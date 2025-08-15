@@ -121,3 +121,31 @@ export const getALLMovies = async(req,res)=>{
         console.log(err)
     }
 }
+
+export const searchMovies = async(req,res)=>{
+    try{
+        const{name, genre}=req.body;
+        const query={};
+
+        if(name){
+            query.movieName = {$regex: name, $options: 'i'}
+        }
+         if (genre) {
+            query.genre = { $regex: genre, $options: 'i' };
+        }
+
+         const movies = await Movie.find(query);
+
+          res.status(200).json({
+            message: "Search results",
+            count: movies.length,
+            movies
+        });
+    }
+    catch(error){
+       console.error("Error searching movies:", error);
+        res.status(500).json({ message: "Internal Server Error", error: error.message });
+    }
+}
+
+
