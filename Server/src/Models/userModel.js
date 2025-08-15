@@ -1,12 +1,40 @@
 import mongoose from 'mongoose'
 
 const userSchema = new mongoose.Schema({
-    profilePic:{type:String, required:true},
-    username: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true },
-    contact: { type: Number, required: true, unique: true },
-    password: { type: String, required: true },
-    role: { type: String, required: true, enum: ["admin", "user", "theater"] }
+    profilePic: {
+        type: String,
+        required: true
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    contact: {
+        type: Number,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    role: {
+        type: String,
+        required: true,
+        enum: ["admin", "user", "theater"]
+    },
+    status:{
+        type:String,
+        enum:["pending","approved","rejected"],
+        required:true,
+        default:"pending"
+    }
 }, {
     timestamps: true
 })

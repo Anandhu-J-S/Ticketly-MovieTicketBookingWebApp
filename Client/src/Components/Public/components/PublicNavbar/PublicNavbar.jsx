@@ -50,7 +50,7 @@ function PublicNavbar() {
                 <div className="collapse navbar-collapse justify-content-between" id="mynavbar">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/"><p className={`${textClass} mt-3`}>Home</p></Link>
+                            <Link className="nav-link" to="/user-home"><p className={`${textClass} mt-3`}>Home</p></Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/movies"><p className={`${textClass} mt-3`}>Here</p></Link>

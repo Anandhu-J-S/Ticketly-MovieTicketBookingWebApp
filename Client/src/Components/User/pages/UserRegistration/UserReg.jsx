@@ -1,221 +1,195 @@
-// 
-// import { Link } from "react-router-dom";
-// import profilepic from "../../../../assets/images/def_profile.webp";
-// import trailer from "../../../../assets/Videos/trailer.mp4";
-// import { useState } from "react";
-// import { useFormik } from "formik";
-// import * as Yup from "yup";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
-// function UserReg() {
-//   const [preview, setPreview] = useState(null);
-//   const [showPass, setShowPass] = useState(true);
-//   const [showCheckPass, setShowCheckPass] = useState(true);
-
-//   const formik = useFormik({
-//     initialValues: {
-//       username: "",
-//       email: "",
-//       contact: "",
-//       password: "",
-//       confirmPassword: "",
-//     },
-//     validationSchema: Yup.object({
-//       username: Yup.string().required("Username is required"),
-//       email: Yup.string().email("Invalid email").required("Email is required"),
-//       contact: Yup.string()
-//         .matches(/^\d{10}$/, "Contact must be 10 digits")
-//         .required("Contact is required"),
-//       password: Yup.string()
-//         .min(6, "Password must be at least 6 characters")
-//         .required("Password is required"),
-//       confirmPassword: Yup.string()
-//         .oneOf([Yup.ref("password"), null], "Passwords must match")
-//         .required("Confirm your password"),
-//     }),
-//     onSubmit: (values) => {
-//       alert("Form submitted successfully!");
-//       console.log(values);
-//     },
-//   });
-
-//   const handleImageChange = (e) => {
-//     const file = e.target.files[0];
-//     if (file) setPreview(URL.createObjectURL(file));
-//   };
-
-//   return (
-//     <div className="user-reg-container">
-//       <div className="user-reg-bg-parent">
-//         <div className="user-reg-bg-left">
-//           <div className="user-reg-left-container container">
-//             <video
-//               src={trailer}
-//               autoPlay
-//               muted
-//               loop
-//               // controls
-//               playsInline
-//               className="user-reg-bg-video"
-//             />
-//             <p className="user-reg-left-container-text text-light">
-//               🎟️ "Your Seat to the Big Screen Awaits — Join Now!"
-//             </p>
-//           </div>
-//         </div>
-
-//         <div className="user-reg-bg-right">
-//           <div className="card user-reg-card-container">
-//             <div className="card-head">
-//               <p className="user-reg-card-title">🎉 Welcome to Ticketly — Let’s get you seated! 🍿</p>
-//               <p className="user-reg-card-body">
-//                 🎬 Join now and never miss a seat! Book your favorite movies anytime, anywhere.
-//               </p>
-//             </div>
-
-//             <form onSubmit={formik.handleSubmit}>
-//               <div className="card-body">
-//                 {/* Image Upload and Preview */}
-//                 <div className="d-flex justify-content-center mb-3">
-//                   <label htmlFor="profile-upload" className="profile-upload-circle">
-//                     <img
-//                       title="profile picture"
-//                       src={preview || profilepic}
-//                       alt="Profile Preview"
-//                       className="user-reg-profile-preview"
-//                     />
-//                   </label>
-//                   <input
-//                     type="file"
-//                     id="profile-upload"
-//                     accept="image/*"
-//                     onChange={handleImageChange}
-//                     className="d-none"
-//                   />
-//                 </div>
-
-//                 {/* Username */}
-//                 <input
-//                   type="text"
-//                   placeholder="Username"
-//                   className="form-control user-reg-form-size"
-//                   {...formik.getFieldProps("username")}
-//                 />
-//                 {formik.touched.username && formik.errors.username && (
-//                   <div className="text-danger small">{formik.errors.username}</div>
-//                 )}
-
-//                 {/* Email */}
-//                 <input
-//                   type="email"
-//                   placeholder="Email"
-//                   className="form-control user-reg-form-size"
-//                   {...formik.getFieldProps("email")}
-//                 />
-//                 {formik.touched.email && formik.errors.email && (
-//                   <div className="text-danger small">{formik.errors.email}</div>
-//                 )}
-
-//                 {/* Contact */}
-//                 <input
-//                   type="tel"
-//                   placeholder="Contact Number"
-//                   className="form-control user-reg-form-size"
-//                   {...formik.getFieldProps("contact")}
-//                 />
-//                 {formik.touched.contact && formik.errors.contact && (
-//                   <div className="text-danger small">{formik.errors.contact}</div>
-//                 )}
-
-//                 {/* Password */}
-//                 <div className="position-relative">
-//                   <div className="d-flex justify-content-end">
-//                     <input
-//                       type={showPass ? "password" : "text"}
-//                       placeholder="Password"
-//                       className="form-control user-reg-form-size"
-//                       {...formik.getFieldProps("password")}
-//                     />
-//                     <FontAwesomeIcon
-//                       className="pass-icon-login"
-//                       onClick={() => setShowPass(!showPass)}
-//                       icon={showPass ? faEye : faEyeSlash}
-//                     />
-//                   </div>
-//                   {formik.touched.password && formik.errors.password && (
-//                     <div className="text-danger small">{formik.errors.password}</div>
-//                   )}
-//                 </div>
-
-//                 {/* Confirm Password */}
-//                 <div className="position-relative">
-//                   <div className="d-flex justify-content-end">
-//                     <input
-//                       type={showCheckPass ? "password" : "text"}
-//                       placeholder="Confirm Password"
-//                       className="form-control user-reg-form-size"
-//                       {...formik.getFieldProps("confirmPassword")}
-//                     />
-//                     <FontAwesomeIcon
-//                       className="pass-icon-login"
-//                       onClick={() => setShowCheckPass(!showCheckPass)}
-//                       icon={showCheckPass ? faEye : faEyeSlash}
-//                     />
-//                   </div>
-//                   {formik.touched.confirmPassword && formik.errors.confirmPassword && (
-//                     <div className="text-danger small">{formik.errors.confirmPassword}</div>
-//                   )}
-//                 </div>
-
-//                 <p className="text-center">
-//                   Already have an account?{" "}
-//                   <Link className="text-dark text-decoration-none" to="/user-login">
-//                     <b>Login</b>
-//                   </Link>
-//                 </p>
-
-//                 <div className="d-flex justify-content-center">
-//                   <button type="submit" className="btn btn-lg btn-primary">
-//                     SignUP
-//                   </button>
-//                 </div>
-//               </div>
-//             </form>
-
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default UserReg;
-
-import "../UserRegistration/UserReg.css";
-import { useContext } from 'react'
-import { ThemeContext } from '../../../../Context/ThemeContext'
-
+import { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
+import "./UserReg.css";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { Base_URl } from "../../../../BaseUrl/BaseUrl";
+import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 function UserReg() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-  const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate()
+
+  const [profilePreview, setProfilePreview] = useState(null);
+  const [profilePicError, setProfilePicError] = useState("");
+
+  const fileInputRef = useRef(null); // ref for file input
+
+  const onSubmit = async (data) => {
+    // Manual file validation using ref
+    const files = fileInputRef.current?.files;
+    if (!files || files.length === 0) {
+      setProfilePicError("Profile picture is required");
+      return;
+    }
+    setProfilePicError("");
+
+    try {
+      const formData = new FormData();
+      formData.append("username", data.username);
+      formData.append("email", data.email);
+      formData.append("contact", data.contact);
+      formData.append("password", data.password);
+      formData.append("role", "user");
+      formData.append("profilePic", files[0]);
+
+      const response = await axios.post(`${Base_URl}user/register`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(response.data);
+      toast.success(response.data.message);
+      navigate("/user-login")
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleImageChange = (e) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      setProfilePreview(URL.createObjectURL(files[0]));
+      setProfilePicError(""); // clear error on new selection
+    }
+  };
+
   return (
-    <div className={`user-reg-bg ${theme ? "bg-color-darkmode" : "bg-color-lightmode"}`}>
+    <div className="user-reg-bg">
+      <div className="user-reg-form-container">
+        <div className="user-reg-form-card">
+          <h2 className="reg-title">Create Account</h2>
 
-      {/* <p className={`${theme ? "text-color-darkmode" : "text-color-lightmode"}`}>bfgbf</p> */}
+          <form onSubmit={handleSubmit(onSubmit)} className="reg-form">
+            {/* Profile Picture Upload */}
+            <div className="profile-pic-upload">
+              <label htmlFor="profilePicInput" style={{ cursor: "pointer" }}>
+                {profilePreview ? (
+                  <img
+                    src={profilePreview}
+                    alt="Profile Preview"
+                    className="profile-preview"
+                  />
+                ) : (
+                  <div className="upload-placeholder">Upload Profile Picture</div>
+                )}
+              </label>
 
+              <input
+                id="profilePicInput"
+                type="file"
+                accept="image/*"
+                hidden
+                ref={fileInputRef} // use ref instead of register
+                onChange={handleImageChange}
+              />
+              {/* Show manual validation error */}
+              {profilePicError && <p className="error-text">{profilePicError}</p>}
+            </div>
 
-      <div className="card">
-        <div className="card-body">
-          <div className="card-head">
-            <p className={`${theme ? "text-color-darkmode" : "text-color-lightmode"}`}>Register</p>
+            {/* Username */}
+            <input
+              type="text"
+              placeholder="Username"
+              className="reg-input"
+              {...register("username", {
+                required: "Username is required",
+                minLength: { value: 2, message: "Minimum 2 characters required" },
+              })}
+            />
+            {errors.username && (
+              <p className="error-text">{errors.username.message}</p>
+            )}
+
+            {/* Email */}
+            <input
+              type="email"
+              placeholder="Email"
+              className="reg-input"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Enter a valid email address",
+                },
+              })}
+            />
+            {errors.email && <p className="error-text">{errors.email.message}</p>}
+
+            {/* Contact Number */}
+            <input
+              type="tel"
+              placeholder="Contact Number"
+              className="reg-input"
+              {...register("contact", {
+                required: "Contact number is required",
+                pattern: {
+                  value: /^[0-9]{10}$/,
+                  message: "Contact number must be exactly 10 digits",
+                },
+              })}
+            />
+            {errors.contact && <p className="error-text">{errors.contact.message}</p>}
+
+            {/* Password */}
+            <input
+              type="password"
+              placeholder="Password"
+              className="reg-input"
+              {...register("password", {
+                required: "Password is required",
+                minLength: { value: 5, message: "Minimum 5 characters" },
+                pattern: {
+                  value:
+                    /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{5,}$/,
+                  message:
+                    "Must include at least one uppercase and one special character",
+                },
+              })}
+            />
+            {errors.password && (
+              <p className="error-text">{errors.password.message}</p>
+            )}
+
+            {/* Confirm Password */}
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              className="reg-input"
+              {...register("confirmPassword", {
+                required: "Please confirm your password",
+                validate: (value) =>
+                  value === watch("password") || "Passwords do not match",
+              })}
+            />
+            {errors.confirmPassword && (
+              <p className="error-text">{errors.confirmPassword.message}</p>
+            )}
+
+            <button type="submit" className="reg-button">
+              Register
+            </button>
+          </form>
+
+          <div className="register-footer">
+            <p className="text-light">
+              Already have an Account?{" "}
+              <Link className="register-link" to="/user-login">
+                Login
+              </Link>
+            </p>
           </div>
-          <div className="card-footer"></div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default UserReg
+export default UserReg;

@@ -27,8 +27,7 @@ const theaterSchema = new mongoose.Schema(
     },
     location: {
       type: String,
-      unique:[true, "should be unique"],
-      required:[true,"please add Location"]
+      required: [true, "please add Location"]
     },
     contact: {
       type: Number,

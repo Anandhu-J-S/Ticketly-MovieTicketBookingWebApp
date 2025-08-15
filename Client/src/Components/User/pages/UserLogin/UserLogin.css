@@ -1,30 +1,98 @@
-
-
-.user-login-form-container {
+.user-login-bg {
+  background-color: #000; /* Pure black background */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  /* background: var(--secondary-gradient); */
+}
 
+.user-login-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 .user-login-form-card {
-  border-radius: 15px !important;
-  padding: 30px;
-  width: 450px;
-  /* background-image: var(--dark-gradient); */
-
+  background-color: #1e1e1e; /* Dark gray card */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.login-user-field {
-  border-radius: 15px !important;
-  height: 50px;
+.login-title {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
   margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.login-pass-field {
-  border-radius: 15px !important;
-  height: 50px;
-  margin-bottom: 15px;
+.login-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.4);
 }
+
+.login-button {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #2563eb;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block; /* Required for transform to work */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.register-link:hover {
+  color: #60a5fa;
+  transform: translateY(-3px); /* Jump up a bit */
+  text-decoration: none;
+}
+

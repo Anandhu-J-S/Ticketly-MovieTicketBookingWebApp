@@ -3,7 +3,7 @@ import { deleteUser, updatedUser, userLogin, userRegister } from "../Controllers
 import { upload } from "../middlewares/upload.js";
 import { deleteTheater, theaterLogin, theaterRegister, theaterUpdate } from "../Controllers/authController/theaterAuthController.js";
 import { adminDelete, adminLogin, adminRegister, adminUpdate } from "../Controllers/authController/adminAuthController.js";
-
+import { updateUserStatus } from "../Controllers/authController/userAuthController.js";
 export const router = Router()
 
 
@@ -12,6 +12,7 @@ router.post("/user/register", upload.single('profilePic'), userRegister)
 router.post("/user/login",upload.none(), userLogin)
 router.put("/user/update/:id",upload.single('profilePic'),updatedUser)
 router.delete("/user/delete/:id",deleteUser)
+router.patch('/user/status/:id',updateUserStatus)
 
 
 //theater
