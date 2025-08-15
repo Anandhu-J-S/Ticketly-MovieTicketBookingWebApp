@@ -121,28 +121,41 @@ function UserLogin() {
   function onSubmit(data) {
     console.log(data)
   }
+  const { theme } = useContext(ThemeContext);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 533af7a9eea3681677c1725124a27e95a51676a0
   return (
     <div>
-       <div className='user-login-bg'>
-          <div className="user-login-form-container">
-            <div className="card user-login-form-card">
-              <div className="card-head text-center"><p>Login</p></div>
-              <div className="card-body">
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                      <input type='text' className='form-control login-user-field' placeholder='UserName'{...register("username" ,{minLength:{value:2 , message:"username must be greater than 2 letter"}, required: "Username is required"})  }></input>
-                      {errors.username && <p className="text-center" style={{color:"red"}}>{errors.username.message}</p>}
-                       <input type='password' className='form-control login-pass-field' placeholder='Password'{...register("password",{minLength:{value:5 , message:"Invalid credentials"}, required: "Password is required"})}></input>
-                       {errors.password && <p className="text-center" style={{color:"red"}}>{errors.password.message}</p>}
-                       <div className="d-flex justify-content-center">
-                        <button type='submit' className="btn btn-primary ">Login</button>
-                       </div>
-                    </form>
-              </div>
+      <div className={`user-login-bg ${theme ? "bg-color-darkmode" : "bg-color-lightmode"}`}>
+        <div className="user-login-form-container">
+          <div className="card user-login-form-card">
+            <div className="card-head text-center"><p>Login</p></div>
+            <div className="card-body">
+              
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <input type='text' 
+                className='form-control login-user-field' 
+                placeholder='UserName'{...register("username", { minLength: { value: 2, message: "username must be greater than 2 letter" },
+                required: "Username is required" })}></input>
+                {errors.username && <p className="text-center" style={{ color: "red" }}>{errors.username.message}</p>}
+
+                <input type='password' 
+                className='form-control login-pass-field' 
+                placeholder='Password'{...register("password", { minLength: { value: 5, message: "Password must have more than 5 characters" }, 
+                required: "Password is required" })}></input>
+                {errors.password && <p className="text-center" style={{ color: "red" }}>{errors.password.message}</p>}
+
+                <div className="d-flex justify-content-center">
+                  <button type='submit' className="btn btn-primary ">Login</button>
+                </div>
+              </form>
             </div>
           </div>
-       </div>
+        </div>
+      </div>
     </div>
   )
 }

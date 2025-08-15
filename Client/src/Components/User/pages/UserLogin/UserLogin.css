@@ -1,17 +1,5 @@
 
 
-:root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --dark-gradient: linear-gradient(135deg, #0c0c0cc0 0%, #1a1a1a 100%);
-  --accent-color: #ff6b6b;
-  --text-light: #f8f9fa;
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-}
-
-
-
 .user-login-form-container {
   display: flex;
   justify-content: center;
@@ -25,7 +13,7 @@
   border-radius: 15px !important;
   padding: 30px;
   width: 450px;
-  background-image: var(--dark-gradient);
+  /* background-image: var(--dark-gradient); */
 
 }
 

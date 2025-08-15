@@ -27,7 +27,7 @@ function LandingPage() {
 
 
 
-  // const theme = localStorage.getItem("Theme") === "true";
+
     const { theme } = useContext(ThemeContext);
 
   return (
