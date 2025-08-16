@@ -11,7 +11,8 @@ export const userRegister = async (req, res) => {
     try {
         console.log("Uploaded file:", req.file);
         const { username, email, contact, password, role } = req.body;
-        const profilePic = req.file ? req.file.path : null;
+     const profilePic = req.file ? req.file.filename : null;
+
 
         //hash the password 
         const hashedPassword = await (bcrypt.hash(password, 10))
@@ -22,7 +23,8 @@ export const userRegister = async (req, res) => {
             contact,
             password: hashedPassword,
             role,
-            profilePic
+            profilePic,
+            status:"pending"
         })
         await newUser.save();
         res.status(201)
@@ -34,7 +36,49 @@ export const userRegister = async (req, res) => {
             .json({ message: `Registration failed !! Contact Admin!`, error: err.message })
         console.log(`Registration failed !! Contact Admin!`,err.message)
     }
+    
 }
+
+
+export const updateUserStatus = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const { status } = req.body; // approved / rejected
+
+        if (!["approved", "rejected"].includes(status)) {
+            return res.status(400)
+                .json({ message: "Invalid status. Must be 'approved' or 'rejected'" });
+        }
+
+        const updatedUser = await createUserModel.findByIdAndUpdate(
+            userId,
+            { status },
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            return res.status(404)
+                .json({ message: "User not found" });
+        }
+
+        res.status(200)
+            .json({ message: `User status updated to ${status}`, user: updatedUser });
+    } catch (err) {
+        console.error(err);
+        res.status(500)
+            .json({ message: "Failed to update user status" });
+    }
+};
+
+export const getPendingUsers = async (req, res) => {
+    try {
+        const users = await createUserModel.find({ status: "pending" });
+        res.status(200).json(users);
+    } catch (err) {
+        res.status(500).json({ message: "Error fetching pending users" });
+    }
+};
+
 
 
 export const userLogin = async (req, res) => {
@@ -43,9 +87,9 @@ export const userLogin = async (req, res) => {
     const loginUser = await createUserModel.findOne({ username })
 
     //if username not found 
-    if (!loginUser) {
+    if (!loginUser.status !== "approved") {
         return res.status(404)
-            .json({ message: `${username} does not exist!` })
+            .json({message:`Your account is ${loginUser.status}. Please contact admin.` })
     }else{
         console.log(`Welcome ${username}`)
     }
