@@ -16,12 +16,7 @@ function UserLogin() {
 
   const { theme } = useContext(ThemeContext);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 533af7a9eea3681677c1725124a27e95a51676a0
-=======
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(`${Base_URl}user/login`, data); // Sending plain JSON, not FormData
@@ -43,7 +38,6 @@ function UserLogin() {
     }
   };
 
->>>>>>> 2b569124348b8bc48bf1b4affa3c1502d10f467e
   return (
     <div className={`user-login-bg ${theme ? 'bg-dark' : 'bg-light'}`}>
       <div className="user-login-form-container">

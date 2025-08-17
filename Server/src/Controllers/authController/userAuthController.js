@@ -82,37 +82,42 @@ export const getPendingUsers = async (req, res) => {
 
 
 export const userLogin = async (req, res) => {
-    const { username, password } = req.body;
+    try {
+        const { username, password } = req.body;
 
-    const loginUser = await createUserModel.findOne({ username })
+        const loginUser = await createUserModel.findOne({ username });
 
-    //if username not found 
-    if (!loginUser.status !== "approved") {
-        return res.status(404)
-            .json({message:`Your account is ${loginUser.status}. Please contact admin.` })
-    }else{
-        console.log(`Welcome ${username}`)
+        // Check if user exists
+        if (!loginUser) {
+            return res.status(404).json({ message: "User not found" });
+        }
+
+        // Check user status
+        if (loginUser.status !== "approved") {
+            return res.status(403).json({ message: `Your account is ${loginUser.status}. Please contact admin.` });
+        }
+
+        // Validate password
+        const isMatch = await bcrypt.compare(password, loginUser.password);
+        if (!isMatch) {
+            return res.status(401).json({ message: "Invalid credentials" });
+        }
+
+        // Generate token
+        const token = jwt.sign(
+            { id: loginUser._id, role: loginUser.role },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h" }
+        );
+
+        res.status(200).json({ token, message: `Welcome ${loginUser.username}` });
+
+    } catch (err) {
+        console.error("Login Error:", err);
+        res.status(500).json({ message: "Login failed", error: err.message });
     }
-    //if matched
-    const isMatch = await bcrypt.compare(password, loginUser.password)
+};
 
-    //if !matched
-
-    if (!isMatch) {
-        return res.status(400)
-            .json({ message: "Invalid Credentials" })
-    }
-
-    //if matched generate token
-
-    const token = jwt.sign(
-        { id: loginUser._id, role: loginUser.role },
-        process.env.JWT_SECRET,
-        { expiresIn: "1h" }
-    );
-    res.status(200)
-        .json({ token })
-}
 
 //update user profile
 
@@ -149,8 +154,6 @@ export const updatedUser = async (req, res) => {
         }
         res.status(200)
             .json({ message: `User updated successfully` })
-
-
     }
     catch (err) {
         console.log(err);

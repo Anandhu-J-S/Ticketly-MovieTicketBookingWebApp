@@ -2,9 +2,9 @@ import { Route } from "react-router-dom"
 
 function TheaterRoutes() {
   return (
-<>
-<Route></Route>
-</>
+    <>
+      <Route></Route>
+    </>
   )
 }
 

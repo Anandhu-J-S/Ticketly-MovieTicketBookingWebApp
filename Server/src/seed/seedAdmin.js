@@ -16,12 +16,12 @@ export const seedAdmin = async (req, res) => {
                 role: "admin"
             })
             await newAdmin.save();
-            console.log('Default Admin created')
+            console.log('✅ Default Admin created')
         } else {
-            console.log("Admin Already Exists")
+            console.log("✅ Admin Already Exists")
         }
     }
     catch (err) {
-        console.log("Error seeding Admin",err)
+        console.log("❌ Error seeding Admin",err)
     }
 }

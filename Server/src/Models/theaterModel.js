@@ -1,49 +1,47 @@
 import mongoose from "mongoose";
 
-const theaterSchema = new mongoose.Schema(
-  {
-    image: {
-      type: String,
-      required: [true, "please add profilePic"]
-    },
-    theaterName: {
-      type: String,
-      unique: true,
-      required: [true, "please add Theater Name"]
-    },
-    email: {
-      type: String,
-      unique: true,
-      required: [true, "please add Email"]
-    },
-    password: {
-      type: String,
-      required: [true, "please add Password"]
-    },
-    address: {
-      type: String,
-      unique: true,
-      required: [true, "please add address"]
-    },
-    location: {
-      type: String,
-      required: [true, "please add Location"]
-    },
-    contact: {
-      type: Number,
-      unique: true,
-      required: true
-    },
-    openingHours: {
-      start: { type: String, required: true },
-      end: { type: String, required: true },
-    },
-    numberOfscreens: { type: Number, required: true, min: 1 },
-    role: { type: String, enum: ["user", "theater", "admin"] }
+const theaterSchema = new mongoose.Schema({
+  image: { type: String },
+  theaterName: {
+    type: String,
+    unique: true
   },
-  {
-    timestamps: true,
-  }
-);
+  email: {
+    type: String,
+    unique: true
+  },
+  password: {
+    type: String
+  },
+
+  address: {
+    type: String,
+    unique: true
+  },
+  location: {
+    type: String
+  },
+  contact: {
+    type: Number,
+    unique: true
+  },
+  openingHours: {
+    start: { type: String },
+    end: { type: String },
+  },
+  numberOfscreens: {
+    type: Number,
+    min: 1
+  },
+  role: {
+    type: String,
+    enum: ["user", "theater", "admin"]
+  },
+  status: {
+    type: String,
+    enum: ["active", "banned", "pending", "approved", "rejected"],
+    default: "pending",
+  },
+}, { timestamps: true });
 
 export const createTheaterSchema = mongoose.model("theater", theaterSchema);
